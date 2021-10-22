@@ -25,10 +25,10 @@ M.mappings = {
 -- NvChad included plugin options & overrides
 M.plugins = {
    options = {
-      --   lspconfig = {
+      lspconfig = {
       --    path of file containing setups of different lsps (ex : "custom.plugins.lspconfig"), read the docs for more info
-      --    setup_lspconf = "",
-      --   },
+        setup_lspconf = "custom.plugins.lspconfig",
+      },
    },
    -- To change the Packer `config` of a plugin that comes with NvChad,
    -- add a table entry below matching the plugin github name

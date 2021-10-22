@@ -26,19 +26,5 @@ hooks.add("setup_mappings", function(map)
 --    .... many more mappings ....
 end)
 
--- To add new plugins, use the "install_plugin" hook,
--- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
--- see: https://github.com/wbthomason/packer.nvim
--- examples below:
-
--- hooks.add("install_plugins", function(use)
---    use {
---       "max397574/better-escape.nvim",
---       event = "InsertEnter",
---    }
--- end)
-
--- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
--- then source it with
-
--- require "custom.plugins.mkdir"
+-- personal plugins are in "lua/custom/plugins/"
+require "custom.plugins"
