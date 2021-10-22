@@ -1,4 +1,5 @@
 local M = {}
+local overrides = require("core.hooks").createOverrides "lsp"
 
 M.setup_lsp = function(attach, capabilities)
    local lspconfig = require "lspconfig"
@@ -16,6 +17,17 @@ M.setup_lsp = function(attach, capabilities)
          },
       }
    end
+
+  local lsp_publish_diagnostics_options = overrides.get("publish_diagnostics", {
+     virtual_text = false,
+     signs = true,
+     underline = true,
+     update_in_insert = false, -- update diagnostics insert mode
+  })
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+     vim.lsp.diagnostic.on_publish_diagnostics,
+     lsp_publish_diagnostics_options
+  )
    
    -- typescript
 

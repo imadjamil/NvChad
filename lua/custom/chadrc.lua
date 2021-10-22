@@ -13,6 +13,13 @@ M.options, M.ui, M.mappings, M.plugins = {}, {}, {}, {}
 
 M.options = {
   relativenumber = true,
+  tabstop = 4, -- Number of spaces that a <Tab> in the file counts for
+   -- NvChad options
+   nvChad = {
+      -- used for updater
+      update_url = "https://github.com/imadjamil/NvChad",
+      update_branch = "main",
+   },
 }
 
 M.ui = {
