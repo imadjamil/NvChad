@@ -6,6 +6,7 @@ hooks.add("install_plugins", function(use)
     event = "InsertEnter",
   }
   
+  -- formatting and diagnostics
   use {
    "jose-elias-alvarez/null-ls.nvim",
     after = "nvim-lspconfig",
@@ -26,8 +27,46 @@ hooks.add("install_plugins", function(use)
     end,
   }
 
+  -- refactoring and code manipulation
   use {
-    "numirias/semshi",
+    "tpope/vim-commentary",
+  }
+
+  use {
+    "heavenshell/vim-pydocstring", 
+    run="make install",
+  }
+
+  -- note taking
+  use {
+    "oberblastmeister/neuron.nvim",
+    requires = {
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    }
+  }
+
+  -- git
+  use {
+    "andrewradev/diffurcate.vim",
+  }
+
+  -- syntax highlighting
+  use {
+    "numirias/semshi", -- python
+  }
+
+  -- navigation
+  use {
+    "ThePrimeagen/harpoon",
+    requires= {
+      "nvim-lua/plenary.nvim",
+      "nvim-lua/popup.nvim",
+    },
+    config = function()
+      require("custom.plugins.conf.harpoon").setup()
+    end,
   }
 
 end)
