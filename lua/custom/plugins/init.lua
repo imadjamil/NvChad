@@ -1,72 +1,71 @@
 local hooks = require "core.hooks"
 
 hooks.add("install_plugins", function(use)
-  use {
-    "deoplete-plugins/deoplete-clang",
-    event = "InsertEnter",
-  }
-  
-  -- formatting and diagnostics
-  use {
-   "jose-elias-alvarez/null-ls.nvim",
-    after = "nvim-lspconfig",
-    config = function()
-       require("custom.plugins.conf.null-ls").setup()
-    end,
-  }
+   use {
+      "deoplete-plugins/deoplete-clang",
+      event = "InsertEnter",
+   }
 
-  use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-    require("trouble").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-    end,
-  }
+   -- formatting and diagnostics
+   use {
+      "jose-elias-alvarez/null-ls.nvim",
+      after = "nvim-lspconfig",
+      config = function()
+         require("custom.plugins.conf.null-ls").setup()
+      end,
+   }
 
-  -- refactoring and code manipulation
-  use {
-    "tpope/vim-commentary",
-  }
+   use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+         require("trouble").setup {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+         }
+      end,
+   }
 
-  use {
-    "heavenshell/vim-pydocstring", 
-    run="make install",
-  }
+   -- refactoring and code manipulation
+   use {
+      "tpope/vim-commentary",
+   }
 
-  -- note taking
-  use {
-    "oberblastmeister/neuron.nvim",
-    requires = {
-      "nvim-lua/popup.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-    }
-  }
+   use {
+      "heavenshell/vim-pydocstring",
+      run = "make install",
+   }
 
-  -- git
-  use {
-    "andrewradev/diffurcate.vim",
-  }
+   -- note taking
+   use {
+      "oberblastmeister/neuron.nvim",
+      requires = {
+         "nvim-lua/popup.nvim",
+         "nvim-lua/plenary.nvim",
+         "nvim-telescope/telescope.nvim",
+      },
+   }
 
-  -- syntax highlighting
-  use {
-    "numirias/semshi", -- python
-  }
+   -- git
+   use {
+      "andrewradev/diffurcate.vim",
+   }
 
-  -- navigation
-  use {
-    "ThePrimeagen/harpoon",
-    requires= {
-      "nvim-lua/plenary.nvim",
-      "nvim-lua/popup.nvim",
-    },
-    config = function()
-      require("custom.plugins.conf.harpoon").setup()
-    end,
-  }
+   -- syntax highlighting
+   use {
+      "numirias/semshi", -- python
+   }
 
+   -- navigation
+   use {
+      "ThePrimeagen/harpoon",
+      requires = {
+         "nvim-lua/plenary.nvim",
+         "nvim-lua/popup.nvim",
+      },
+      config = function()
+         require("custom.plugins.conf.harpoon").setup()
+      end,
+   }
 end)

@@ -43,7 +43,7 @@ M.setup = function(on_attach)
    null_ls.config {
       sources = sources,
    }
-   require("lspconfig")["null-ls"].setup { on_attach = on_attach, cmd = {"vim"} }
+   require("lspconfig")["null-ls"].setup { on_attach = on_attach, cmd = { "vim" } }
 end
 
 return M

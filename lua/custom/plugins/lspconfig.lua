@@ -18,28 +18,28 @@ M.setup_lsp = function(attach, capabilities)
       }
    end
 
-  local lsp_publish_diagnostics_options = overrides.get("publish_diagnostics", {
-     virtual_text = false,
-     signs = true,
-     underline = true,
-     update_in_insert = false, -- update diagnostics insert mode
-  })
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-     vim.lsp.diagnostic.on_publish_diagnostics,
-     lsp_publish_diagnostics_options
-  )
-   
+   local lsp_publish_diagnostics_options = overrides.get("publish_diagnostics", {
+      virtual_text = false,
+      signs = true,
+      underline = true,
+      update_in_insert = false, -- update diagnostics insert mode
+   })
+   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics,
+      lsp_publish_diagnostics_options
+   )
+
    -- typescript
 
- lspconfig.tsserver.setup {
+   lspconfig.tsserver.setup {
       on_attach = function(client, bufnr)
          client.resolved_capabilities.document_formatting = false
          vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>", {})
       end,
    }
 
--- the above tsserver config will remvoe the tsserver's inbuilt formatting 
--- since I use null-ls with denofmt for formatting ts/js stuff.
+   -- the above tsserver config will remvoe the tsserver's inbuilt formatting
+   -- since I use null-ls with denofmt for formatting ts/js stuff.
 end
 
 return M
