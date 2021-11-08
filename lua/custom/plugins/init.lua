@@ -45,6 +45,9 @@ hooks.add("install_plugins", function(use)
          "nvim-lua/plenary.nvim",
          "nvim-telescope/telescope.nvim",
       },
+      config = function()
+        require("custom.plugins.conf.neuron").setup()
+      end,
    }
 
    -- git
