@@ -33,7 +33,7 @@ local sources = {
 
    -- python
    b.formatting.black,
-   b.diagnostics.flake8.with { extra_args = {"--max-line-length 100"} },
+   b.diagnostics.flake8.with { extra_args = { "--max-line-length 100" } },
    --- b.diagnostics.pylint,
 }
 
