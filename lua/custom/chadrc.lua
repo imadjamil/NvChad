@@ -38,7 +38,7 @@ M.plugins = {
          setup_lspconf = "custom.plugins.lspconfig",
       },
       autopairs = {
-         ignored_next_char = "[%w%.]", -- will ignore alphanumeric and `.` symbol
+         ignored_next_char = "[%w%.$]", -- will ignore alphanumeric and `.` symbol
       },
    },
    -- To change the Packer `config` of a plugin that comes with NvChad,
