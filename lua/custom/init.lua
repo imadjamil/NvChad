@@ -35,6 +35,12 @@ hooks.add("setup_mappings", function(map)
    map("n", "<leader>,2", ":lua require('harpoon.term').gotoTerminal(2)<CR>")
    map("n", "<leader>&", ":lua require('harpoon.term').sendCommand(1, 1)<CR>")
    map("n", "<leader>é", ":lua require('harpoon.term').sendCommand(1, 2)<CR>")
+
+   -- trouble
+   map("n", "<leader>,t", "<cmd>TroubleToggle lsp_document_diagnostics<CR>")
+   map("n", "<leader>,q", "<cmd>TroubleToggle quickfix<CR>")
+   map("n", "<leader>,l", "<cmd>TroubleToggle loclist<CR>")
+   
 end)
 
 -- personal plugins are in "lua/custom/plugins/"
