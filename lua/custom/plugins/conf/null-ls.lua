@@ -35,12 +35,11 @@ local sources = {
    b.formatting.black,
    b.diagnostics.flake8.with { extra_args = { "--max-line-length 100" } },
    --- b.diagnostics.pylint,
-   
+
    -- English
-   b.diagnostics.misspell.with {  filetypes = { "markdown" } },
+   b.diagnostics.misspell.with { filetypes = { "markdown" } },
    -- b.diagnostics.codespell,
    -- b.diagnostics.write_good.with { extra_args = {"--no-passive"} },
-
 }
 
 local M = {}
