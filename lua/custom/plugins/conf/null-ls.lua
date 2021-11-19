@@ -29,7 +29,7 @@ local sources = {
 
    -- c, cpp, cs, java
    b.formatting.clang_format,
-   b.formatting.cppcheck, --- c, cpp
+   b.diagnostics.cppcheck, --- c, cpp
 
    -- python
    b.formatting.black,
