@@ -33,7 +33,7 @@ local sources = {
 
    -- python
    b.formatting.black,
-   b.diagnostics.flake8.with { extra_args = { "max-line-length=99" } },
+   b.diagnostics.flake8.with { extra_args = { "--max-line-length","99" } },
    --- b.diagnostics.pylint,
 
    -- English
@@ -45,10 +45,9 @@ local sources = {
 local M = {}
 
 M.setup = function(on_attach)
-   null_ls.config {
+   null_ls.setup {
       sources = sources,
    }
-   require("lspconfig")["null-ls"].setup { on_attach = on_attach, cmd = { "vim" } }
 end
 
 return M

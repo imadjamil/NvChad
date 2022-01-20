@@ -38,17 +38,17 @@ customPlugins.add(function(use)
    }
 
    -- note taking
-   use {
-      "oberblastmeister/neuron.nvim",
-      requires = {
-         "nvim-lua/popup.nvim",
-         "nvim-lua/plenary.nvim",
-         "nvim-telescope/telescope.nvim",
-      },
-      config = function()
-         require("custom.plugins.conf.neuron").setup()
-      end,
-   }
+   -- use {
+   --    "oberblastmeister/neuron.nvim",
+   --    requires = {
+   --       "nvim-lua/popup.nvim",
+   --       "nvim-lua/plenary.nvim",
+   --       "nvim-telescope/telescope.nvim",
+   --    },
+   --    config = function()
+   --       require("custom.plugins.conf.neuron").setup()
+   --    end,
+   -- }
 
    -- git
    use {
