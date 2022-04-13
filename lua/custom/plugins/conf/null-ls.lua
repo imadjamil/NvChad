@@ -34,7 +34,7 @@ local sources = {
    -- python
    b.formatting.black,
    b.diagnostics.flake8.with { extra_args = { "--max-line-length","99" } },
-   --- b.diagnostics.pylint,
+   -- b.diagnostics.pylint,
 
    -- English
    b.diagnostics.misspell.with { filetypes = { "markdown" } },

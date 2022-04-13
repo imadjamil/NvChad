@@ -35,7 +35,7 @@ M.options = {
       window_nav = true,
 
       -- updater
-      update_url = "https://github.com/NvChad/NvChad",
+      update_url = "https://github.com/imadjamil/NvChad",
       update_branch = "main",
    },
 }
