@@ -25,6 +25,10 @@ map("n", "<leader>,l", "<cmd>TroubleToggle loclist<CR>")
 -- gitsigns
 map("n", "<leader>gb", "<cmd>lua require('gitsigns').blame_line{full=true}<CR>")
 
+-- vim-sendtowindow
+-- vim.g.sendtowindow_use_defaults=0
+-- map("", "<leader>sd", "<Plug>SendDown")
+
 require "custom.plugins"
 
 -- personal plugins are in "lua/custom/plugins/"

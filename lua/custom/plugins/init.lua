@@ -71,4 +71,15 @@ customPlugins.add(function(use)
          require("custom.plugins.conf.harpoon").setup()
       end,
    }
+
+   use {
+     "hkupty/iron.nvim",
+      config = function()
+         require("custom.plugins.conf.iron").setup()
+      end,
+   }
+
+   use {
+     "szw/vim-maximizer",
+   }
 end)
