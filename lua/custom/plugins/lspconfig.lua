@@ -5,7 +5,7 @@ M.setup_lsp = function(attach, capabilities)
 
    -- lspservers with default config
 
-   local servers = { "html", "cssls", "pyright", "rust_analyzer" }
+   local servers = { "html", "cssls", "pyright", "rust_analyzer", "bashls" }
 
    for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup {

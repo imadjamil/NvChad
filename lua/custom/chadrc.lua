@@ -47,7 +47,10 @@ M.plugins = {
    -- this string will be called in a `require`
    --              use "(custom.configs).my_func()" to call a function
    --              use "custom.blankline" to call a file
-   default_plugin_config_replace = {},
+   -- default_plugin_config_replace = {},
+   user = require "custom.plugins",
 }
+
+M.mappings = require "custom.mappings"
 
 return M
