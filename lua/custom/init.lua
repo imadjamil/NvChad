@@ -23,9 +23,9 @@ map("n", "<leader>,q", "<cmd>TroubleToggle quickfix<CR>")
 map("n", "<leader>,l", "<cmd>TroubleToggle loclist<CR>")
 
 -- gitsigns
-map("n", "<leader>gb", "<cmd>lua require('gitsigns').blame_line{full=true}<CR>")
+-- map("n", "<leader>gb", "<cmd>lua require('gitsigns').blame_line{full=true}<CR>")
 
-require "custom.plugins"
+-- require "custom.plugins"
 
 -- personal plugins are in "lua/custom/plugins/"
 -- local customPlugins = require("core.customPlugins")

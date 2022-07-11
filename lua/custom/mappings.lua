@@ -46,4 +46,39 @@ M.harpoon = {
     },
   }
 }
+
+M.gitsigns = {
+  n = {
+    ["<leader>gbb"] = {
+      function ()
+        require("gitsigns").blame_line{full=true}
+      end,
+        " blame line",
+    },
+    ["<leader>gbt"] = {
+      function ()
+        require("gitsigns").toggle_current_line_blame()
+      end,
+        " toggle blame line",
+    },
+    ["<leader>gbd"] = {
+      function ()
+        require("gitsigns").diffthis()
+      end,
+        " diff index",
+    },
+    ["<leader>gbD"] = {
+      function ()
+        require("gitsigns").diffthis('~')
+      end,
+        " diff last commit",
+    },
+    ["<leader>gbq"] = {
+      function ()
+        require("gitsigns").setqflist()
+      end,
+        " quickfix with hunks",
+    },
+  },
+}
 return M
