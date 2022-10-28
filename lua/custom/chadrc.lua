@@ -25,7 +25,7 @@ M.options = {
 }
 
 M.ui = {
-   theme = "gruvchad",
+   theme = "aquarium",
 }
 
 -- NvChad included plugin options & overrides
