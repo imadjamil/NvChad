@@ -81,4 +81,22 @@ M.gitsigns = {
     },
   },
 }
+
+M.nvterm = {
+  n = {
+    ["<leader>srb"] = {
+      function()
+        require("nvterm.terminal").send("cargo build\r", "horizontal")
+      end,
+      "rust: cargo build",
+    },
+    ["<leader>srr"] = {
+      function()
+        require("nvterm.terminal").send("cargo run\r", "horizontal")
+      end,
+      "rust: cargo run",
+    },
+  },
+}
+
 return M
