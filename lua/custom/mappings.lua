@@ -87,6 +87,7 @@ M.nvterm = {
     ["<leader>srb"] = {
       function()
         require("nvterm.terminal").send("cargo build\r", "horizontal")
+        require("nvterm.terminal").toggle("horizontal")
       end,
       "rust: cargo build",
     },
