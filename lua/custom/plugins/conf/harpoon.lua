@@ -1,16 +1,16 @@
 local ok, harpoon = pcall(require, "harpoon")
 
 if not ok then
-   return
+  return
 end
 
 -- local ui = harpoon.ui
 -- local mark = harpoo.mark
 
 local global_settings = {
-   save_on_toggle = false,
-   save_on_change = true,
-   enter_on_sendcmd = true,
+  save_on_toggle = false,
+  save_on_change = true,
+  enter_on_sendcmd = true,
 }
 
 -- local projects = {
@@ -23,22 +23,20 @@ local global_settings = {
 --     }
 --   }
 
-local M = {}
-
-M.setup = function(on_attach)
-   harpoon.setup {
-      global_settings = global_settings,
-      nav_first_in_list = true,
-      projects = {
-         ["/home/imad/LRM/build/"] = {
-            term = {
-               cmds = {
-                  "tree",
-               },
-            },
-         },
+local on_attach = {
+  global_settings = global_settings,
+  nav_first_in_list = true,
+  projects = {
+    ["/home/imad/LRM/build/"] = {
+      term = {
+        cmds = {
+          "tree",
+        },
       },
-   }
-end
+    },
+  },
+}
 
-return M
+harpoon.setup {
+  on_attach = on_attach
+}

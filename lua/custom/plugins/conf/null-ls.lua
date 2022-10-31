@@ -10,7 +10,7 @@ local sources = {
 
    -- JS html css stuff
    b.formatting.prettierd.with {
-      filetypes = { "html", "json", "markdown", "css", "javascript", "javascriptreact", "yaml" },
+      filetypes = { "html", "json", "markdown", "css", "javascript", "javascriptreact", "yaml", "toml" },
    },
    b.diagnostics.eslint.with {
       command = "eslint_d",
@@ -42,12 +42,7 @@ local sources = {
    -- b.diagnostics.write_good.with { extra_args = {"--no-passive"} },
 }
 
-local M = {}
-
-M.setup = function(on_attach)
-   null_ls.setup {
-      sources = sources,
-   }
-end
-
-return M
+null_ls.setup {
+  debug = true,
+  sources = sources
+}

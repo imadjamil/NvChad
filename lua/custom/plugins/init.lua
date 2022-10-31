@@ -1,9 +1,38 @@
+local overrides = require("custom.plugins.overrides")
+
 return {
-  ["ThePrimeagen/harpoon"] = {
-  config = function()
-    require("custom.plugins.conf.harpoon").setup()
-  end,
+
+-- default plugins ---------------------------------
+
+  ["folke/which-key.nvim"] = { disable = false },
+
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
   },
+
+  -- overrides
+  ["lukas-reineke/indent-blankline.nvim"] = { override_options = overrides.blankline },
+  ["nvim-treesitter/nvim-treesitter"] = { override_options = overrides.treesitter },
+  ["kyazdani42/nvim-tree.lua"] = { override_options = overrides.nvimtree },
+
+  -- custom plugins ---------------------------------
+
+  -- format & linting
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require("custom.plugins.conf.null-ls")
+    end,
+  },
+
+  ["ThePrimeagen/harpoon"] = {
+    config = function()
+      require("custom.plugins.conf.harpoon")
+    end,
+  }
 
 }
 
@@ -13,15 +42,6 @@ return {
 --    use {
 --       "deoplete-plugins/deoplete-clang",
 --       event = "InsertEnter",
---    }
---
---    -- formatting and diagnostics
---    use {
---       "jose-elias-alvarez/null-ls.nvim",
---       after = "nvim-lspconfig",
---       config = function()
---          require("custom.plugins.conf.null-ls").setup()
---       end,
 --    }
 --
 --    use {
