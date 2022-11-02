@@ -101,14 +101,54 @@ M.nvterm = {
   },
 }
 
--- TODO: Can we move the rust-tools mappings here
--- M.rust_tools = {
---   n = {
---       -- Hover actions
---       [<leader>srh] = {
---         require("rust-tools").hover_actions.hover_actions({buffer = buffnr})
---       },
---   },
--- }
+M.dap = {
+  n = {
+    ["<leader>da"] = {
+      function()
+        require("debugHelper").attach()
+      end,
+      "dap attach",
+    },
+    ["<leader>dh"] = {
+      function()
+        require("dap").toggle_break_point()
+      end,
+      "dap break point",
+    },
+    ["<leader>dc"] = {
+      function()
+        require("dap").terminate()
+      end,
+      "dap terminate",
+    },
+    ["<leader>dr"] = {
+      ':lua require"dap".repl.toggle({}, "vsplit")<CR><C-w>l',
+      "dap repl",
+    },
+    ["<leader>dk"] = {
+      ':lua require"dap".up()<CR>zz',
+      "dap up",
+    },
+    ["<leader>dj"] = {
+      ':lua require"dap".down()<CR>zz',
+      "dap down",
+    },
+    ["<leader>dn"] = {
+      function()
+        require("dap").run_to_cursor()
+      end,
+      "dap run to cursor",
+    },
+    ["<leader>ds"] = {
+      ":Telescope dap frames<CR>",
+      "dap frames telescope"
+    },
+    ["<leader>db"] = {
+      ":Telescope dap list_breakpoints<CR>",
+      "dap breakpoints telescope"
+    },
+  }
+
+}
 
 return M

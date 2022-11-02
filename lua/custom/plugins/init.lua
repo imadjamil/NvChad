@@ -44,10 +44,18 @@ return {
   },
 
   -- debug
-  ["mfussenegger/nvim-dap"] = {
-    -- config = function()
-    --   require("custom.plugins.conf.nvim-dap")
-    -- end
+  ["mfussenegger/nvim-dap"] = {},
+
+  ["nvim-telescope/telescope-dap.nvim"] = {
+    config = function()
+      require("telescope").load_extension("dap")
+    end
+  },
+
+  ["theHamsta/nvim-dap-virtual-text"] = {
+    config = function()
+      require("nvim-dap-virtual-text").setup()
+    end
   },
 
   ["rcarriga/nvim-dap-ui"] = {
