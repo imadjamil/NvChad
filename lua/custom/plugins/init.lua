@@ -8,8 +8,8 @@ return {
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.plugins.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.plugins.conf.lspconfig")
     end,
   },
 
@@ -28,12 +28,27 @@ return {
     end,
   },
 
+  -- navigation
   ["ThePrimeagen/harpoon"] = {
     config = function()
       require("custom.plugins.conf.harpoon")
     end,
-  }
+  },
 
+  -- rust
+  ["simrat39/rust-tools.nvim"] = {
+    after = "nvim-lspconfig",
+    config = function()
+      require("custom.plugins.conf.rust-tools")
+    end,
+  },
+
+  -- debug
+  ["puremourning/vimspector"] = {
+    config = function()
+      require("custom.plugins.conf.vimspector")
+    end
+  },
 }
 
 -- local customPlugins = require("core.customPlugins")

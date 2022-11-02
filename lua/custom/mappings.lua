@@ -94,10 +94,21 @@ M.nvterm = {
     ["<leader>srr"] = {
       function()
         require("nvterm.terminal").send("cargo run\r", "horizontal")
+        require("nvterm.terminal").toggle("horizontal")
       end,
       "rust: cargo run",
     },
   },
 }
+
+-- TODO: Can we move the rust-tools mappings here
+-- M.rust_tools = {
+--   n = {
+--       -- Hover actions
+--       [<leader>srh] = {
+--         require("rust-tools").hover_actions.hover_actions({buffer = buffnr})
+--       },
+--   },
+-- }
 
 return M

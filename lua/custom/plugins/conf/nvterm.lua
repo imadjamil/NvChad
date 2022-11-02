@@ -1,4 +1,4 @@
-ocal ok, terminal = pcall(require, "nvterm.terminal")
+local ok, terminal = pcall(require, "nvterm.terminal")
 
 if not ok then
    return
@@ -6,8 +6,6 @@ end
 
 local ft_cmds = {
   python = "python3 " .. vim.fn.expand('%'),
-  ...
-  python --version
 }
 local toggle_modes = {'n', 't'}
 local mappings = {
