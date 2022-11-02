@@ -1,7 +1,8 @@
 local ok, null_ls = pcall(require, "null-ls")
 
 if not ok then
-   return
+  print("null-ls not found!")
+  return
 end
 
 local b = null_ls.builtins

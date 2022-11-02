@@ -44,9 +44,17 @@ return {
   },
 
   -- debug
-  ["puremourning/vimspector"] = {
+  ["mfussenegger/nvim-dap"] = {
+    -- config = function()
+    --   require("custom.plugins.conf.nvim-dap")
+    -- end
+  },
+
+  ["rcarriga/nvim-dap-ui"] = {
+    requires = { "mfussenegger/nvim-dap" },
+    after = "nvim-dap",
     config = function()
-      require("custom.plugins.conf.vimspector")
+      require("custom.plugins.conf.nvim-dap-ui")
     end
   },
 }

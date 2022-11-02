@@ -1,8 +1,7 @@
 -- Treesitter folding 
-vim.wo.foldmethod = 'expr'
+vim.wo.foldmethod = 'indent'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.g.nofoldenabe = true
-
+-- vim.g.foldenable = false
 
 -- LSP Diagnostics Options Setup 
 -- local sign = function(opts)

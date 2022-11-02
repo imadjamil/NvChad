@@ -1,7 +1,12 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
+local present, lspconfig = pcall(require, "lspconfig")
+
+if not present then
+  print("lspconfig not found!")
+  return
+end
 
 -- lspservers with default config
 local servers = { "html", "cssls", "pyright", "rust_analyzer", "bashls" }

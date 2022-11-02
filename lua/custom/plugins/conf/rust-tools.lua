@@ -1,16 +1,64 @@
-local present, rust_tools = pcall(require, "rust-tools")
+-----------------------
+-- Rust
+-----------------------
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-if not present then
-  return
-end
+local rt = require("rust-tools")
 
-rust_tools.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      vim.keymap.set("n", "<Leader>srh", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
-      -- Code action groups
-      vim.keymap.set("n", "<Leader>sra", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
+local extension_path = vim.env.HOME .. '/.local/share/nvim/mason/packages/codelldb/extension/'
+local codelldb_path = extension_path .. 'adapter/codelldb'
+local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+
+rt.setup({
+  tools = {
+    snippet_func = function(edits, bufnr, offset_encoding, old_func)
+    old_func(edits, bufnr, offset_encoding);
+      -- P(edits)
+      -- require("luasnip.extras.lsp").apply_text_edits(
+      --   edits,
+      --   bufnr,
+      --   offset_encoding,
+      --   old_func
+      -- )
+    end,
+
+    inlay_hints = {
+      auto = true,
+      only_current_line = true,
+      -- whether to show parameter hints with the inlay hints or not
+      -- default: true
+      show_parameter_hints = false,
+    },
+    on_initialized = function()
+      -- ih.set_all()
     end,
   },
+  server = {
+    on_attach = function(_, bufnr)
+      vim.keymap.set(
+        "n",
+        "<C-space>",
+        rt.hover_actions.hover_actions,
+        { buffer = bufnr }
+      )
+
+      vim.keymap.set(
+        "n",
+        "<Leader>a",
+        rt.code_action_group.code_action_group,
+        { buffer = bufnr }
+      )
+    end,
+  },
+  dap = {
+    adapter = require("rust-tools.dap").get_codelldb_adapter(
+      codelldb_path,
+      liblldb_path
+    )
+  },
 })
+
+local dap = require("dap")
+dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
+
