@@ -1,7 +1,8 @@
--- Treesitter folding 
+--folding 
 vim.wo.foldmethod = 'indent'
-vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
--- vim.g.foldenable = false
+vim.g.foldopen = 'all' -- open folds with any interactions
+-- vim.g.foldclose = 'all' -- use zx to reset
+vim.wo.foldenable = false -- by default all folds are open, use zi to invert
 
 -- LSP Diagnostics Options Setup 
 -- local sign = function(opts)

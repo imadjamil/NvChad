@@ -44,9 +44,38 @@ return {
   },
 
   -- debug
-  ["mfussenegger/nvim-dap"] = {},
+  ["mfussenegger/nvim-dap"] = {
+    config = function ()
+      require("dap").configurations = {
+        python = {
+          {
+            type = 'python',
+            request = 'launch',
+            name = "Launch file",
+            program = "${file}",
+            pythonPath = function()
+              return '/usr/bin/python'
+            end,
+          },
+        },
+        rust = {
+          {
+            type = "codelldb",
+            request = "launch",
+            -- program = "${file}",
+            program = function()
+              return vim.fn.input('Path to executable:', vim.fn.getcwd() .. '/', 'file')
+            end,
+            cwd = "${workspaceFolder}",
+            stopOnEntry = true,
+          },
+        },
+      }
+    end
+  },
 
   ["nvim-telescope/telescope-dap.nvim"] = {
+    after = "telescope.nvim",
     config = function()
       require("telescope").load_extension("dap")
     end
