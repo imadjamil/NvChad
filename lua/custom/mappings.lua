@@ -105,7 +105,7 @@ M.dap = {
   n = {
     ["<leader>da"] = {
       function()
-        require("dap").toggle_break_point()
+        require("dap").toggle_breakpoint()
       end,
       "dap break point",
     },
