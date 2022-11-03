@@ -1,5 +1,12 @@
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+-- TODO: find a solution to override handlers, combining functions is not a solution
+local on_attach = function ()
+  require("plugins.configs.lspconfig").on_attach()
+  require("custom.plugins.conf.lsp_handlers").on_attach()
+end
+local capabilities = function ()
+  require("plugins.configs.lspconfig").capabilities()
+  require("custom.plugins.conf.lsp_handlers").capabilities()
+end
 
 local present, lspconfig = pcall(require, "lspconfig")
 
@@ -12,6 +19,11 @@ end
 local servers = { "html", "cssls", "pyright", "rust_analyzer", "bashls" }
 
 for _, lsp in ipairs(servers) do
+  if lsp == "rust_analyzer" then
+    -- using rust-tools instead
+    goto continue
+  end
+
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -19,6 +31,7 @@ for _, lsp in ipairs(servers) do
       debounce_text_changes = 150,
     },
   }
+  ::continue::
 end
 
 -- TODO: need to find a solution

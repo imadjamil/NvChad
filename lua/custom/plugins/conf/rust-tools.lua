@@ -28,28 +28,40 @@ rt.setup({
       only_current_line = true,
       -- whether to show parameter hints with the inlay hints or not
       -- default: true
-      show_parameter_hints = false,
+      show_parameter_hints = true,
     },
     on_initialized = function()
       -- ih.set_all()
+      vim.cmd [[ autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh() ]]
     end,
   },
   server = {
-    on_attach = function(_, bufnr)
-      vim.keymap.set(
-        "n",
-        "<C-space>",
-        rt.hover_actions.hover_actions,
-        { buffer = bufnr }
-      )
+    -- on_attach = function(_, bufnr)
+    --   vim.keymap.set(
+    --     "n",
+    --     "<C-space>",
+    --     rt.hover_actions.hover_actions,
+    --     { buffer = bufnr }
+    --   )
+    --
+    --   vim.keymap.set(
+    --     "n",
+    --     "<Leader>a",
+    --     rt.code_action_group.code_action_group,
+    --     { buffer = bufnr }
+    --   )
+    -- end,
+    settings = {
+      ["rust-analyzer"] = {
+        lens = {
+          enable = true,
+        },
+        checkOnSave = {
+          command = "clippy",
+        },
+      },
+    },
 
-      vim.keymap.set(
-        "n",
-        "<Leader>a",
-        rt.code_action_group.code_action_group,
-        { buffer = bufnr }
-      )
-    end,
   },
   dap = {
     adapter = require("rust-tools.dap").get_codelldb_adapter(
