@@ -1,12 +1,6 @@
 -- TODO: find a solution to override handlers, combining functions is not a solution
-local on_attach = function ()
-  require("plugins.configs.lspconfig").on_attach()
-  require("custom.plugins.conf.lsp_handlers").on_attach()
-end
-local capabilities = function ()
-  require("plugins.configs.lspconfig").capabilities()
-  require("custom.plugins.conf.lsp_handlers").capabilities()
-end
+local on_attach = require("plugins.configs.lspconfig").on_attach
+local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local present, lspconfig = pcall(require, "lspconfig")
 
