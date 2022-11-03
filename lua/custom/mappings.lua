@@ -105,21 +105,39 @@ M.dap = {
   n = {
     ["<leader>da"] = {
       function()
-        require("debugHelper").attach()
-      end,
-      "dap attach",
-    },
-    ["<leader>dh"] = {
-      function()
         require("dap").toggle_break_point()
       end,
       "dap break point",
     },
-    ["<leader>dc"] = {
+    ["<leader>dt"] = {
       function()
         require("dap").terminate()
       end,
       "dap terminate",
+    },
+    ["<leader>dc"] = {
+      function()
+        require("dap").continue()
+      end,
+      "dap continue",
+    },
+    ["<leader>di"] = {
+      function()
+        require("dap").step_into()
+      end,
+      "dap step into",
+    },
+    ["<leader>do"] = {
+      function()
+        require("dap").step_over()
+      end,
+      "dap step over",
+    },
+    ["<leader>dh"] = {
+      function()
+        require("dap.ui.widgets").hover()
+      end,
+      "dap hover",
     },
     ["<leader>dr"] = {
       ':lua require"dap".repl.toggle({}, "vsplit")<CR><C-w>l',
@@ -147,7 +165,33 @@ M.dap = {
       ":Telescope dap list_breakpoints<CR>",
       "dap breakpoints telescope"
     },
-  }
+    ["<leader>dlc"] = {
+      function()
+        require("osv").run_this()
+      end,
+      'dap "lua" debug osv'
+    },
+    ["<leader>dll"] = {
+      function()
+        require("osv").launch({port=8086})
+      end,
+      'dap "lua" launch osv'
+    },
+    ["<leader>dut"] = {
+      function ()
+        require("dapui").toggle()
+      end,
+      "dap toggle ui"
+    },
+    ["<leader>duc"] = {
+      function ()
+        require("dapui").toggle()
+      end,
+      "dap close ui"
+    },
+  },
+
+
 
 }
 

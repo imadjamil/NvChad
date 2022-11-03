@@ -58,29 +58,3 @@ rt.setup({
     )
   },
 })
-
-local dap = require("dap")
-dap.defaults.fallback.terminal_win_cmd = "50vsplit new"
-
--- to manually launch the adapter in a terminal with the specified port
--- dap.adapters.codelldb ={
---   type = "server",
---   host = "127.0.0.1",
---   port = "13123"
---   name = "codelldb",
--- }
-
--- auto
-dap.adapters.codelldb = {
-  type = 'server',
-  port = "${port}",
-  executable = {
-    -- CHANGE THIS to your path!
-    command = extension_path .. '/adapter/codelldb',
-    args = {"--port", "${port}"},
-    -- On windows you may have to uncomment this:
-    -- detached = false,
-  }
-}
-
-

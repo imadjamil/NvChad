@@ -46,31 +46,7 @@ return {
   -- debug
   ["mfussenegger/nvim-dap"] = {
     config = function ()
-      require("dap").configurations = {
-        python = {
-          {
-            type = 'python',
-            request = 'launch',
-            name = "Launch file",
-            program = "${file}",
-            pythonPath = function()
-              return '/usr/bin/python'
-            end,
-          },
-        },
-        rust = {
-          {
-            type = "codelldb",
-            request = "launch",
-            -- program = "${file}",
-            program = function()
-              return vim.fn.input('Path to executable:', vim.fn.getcwd() .. '/', 'file')
-            end,
-            cwd = "${workspaceFolder}",
-            stopOnEntry = true,
-          },
-        },
-      }
+      require("custom.plugins.conf.dap")
     end
   },
 
@@ -94,6 +70,8 @@ return {
       require("custom.plugins.conf.nvim-dap-ui")
     end
   },
+
+  ["jbyuki/one-small-step-for-vimkind"] = {},
 }
 
 -- local customPlugins = require("core.customPlugins")
