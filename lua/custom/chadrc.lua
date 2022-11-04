@@ -12,7 +12,7 @@ M.options = {
 }
 
 M.ui = {
-   theme = "everforest",
+   theme = "gruvbox_material",
    transparency = false,
 }
 

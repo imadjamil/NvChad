@@ -1,8 +1,9 @@
---folding 
-vim.wo.foldmethod = 'indent'
-vim.g.foldopen = 'all' -- open folds with any interactions
--- vim.g.foldclose = 'all' -- use zx to reset
-vim.wo.foldenable = false -- by default all folds are open, use zi to invert
+local present, options = pcall(require, "options")
+
+if not present then
+  print("options not present!")
+  return
+end
 
 -- LSP Diagnostics Options Setup 
 -- local sign = function(opts)
