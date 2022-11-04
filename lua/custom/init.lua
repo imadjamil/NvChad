@@ -1,9 +1,5 @@
-local present, options = pcall(require, "options")
+require("custom.options")
 
-if not present then
-  print("options not present!")
-  return
-end
 
 -- LSP Diagnostics Options Setup 
 -- local sign = function(opts)

@@ -5,7 +5,5 @@ vim.g.foldopen = 'all' -- open folds with any interactions
 vim.wo.foldenable = false -- by default all folds are open, use zi to invert
 
 -- rulers
-vim.wo.colorcolumn = '80'
-
-
-
+-- vim.opt.colorcolumn = '80'
+vim.api.nvim_set_option_value("colorcolumn", "79", {})
