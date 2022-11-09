@@ -5,12 +5,12 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local present, lspconfig = pcall(require, "lspconfig")
 
 if not present then
-  print("lspconfig not found!")
+ print("lspconfig not found!")
   return
 end
 
 -- lspservers with default config
-local servers = { "html", "cssls", "pyright", "rust_analyzer", "bashls" }
+local servers = { "html", "cssls", "pyright", "rust_analyzer", "bashls", "ansiblels" }
 
 for _, lsp in ipairs(servers) do
   if lsp == "rust_analyzer" then

@@ -193,6 +193,27 @@ M.dap = {
 
 
 
+
+}
+
+M.colors = {
+  n = {
+    ["<leader>,cs"] = {
+      function ()
+        vim.api.nvim_set_hl(
+          0,
+          "cursorline",
+          {bg = "#2c3c4c", blend = 50, ctermbg = darked, cterm = NONE}
+        )
+      end,
+      "show cursorline"
+    },
+    ["<leader>,ch"] = {
+      ":set cursorline!<CR>",
+      "hide cursorline"
+    },
+
+  }
 }
 
 return M
