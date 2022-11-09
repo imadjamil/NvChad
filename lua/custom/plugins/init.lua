@@ -23,6 +23,7 @@ return {
   -- format & linting
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
+    -- debug = true,
     config = function()
       require("custom.plugins.conf.null-ls")
     end,
