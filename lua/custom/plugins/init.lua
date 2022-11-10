@@ -1,15 +1,15 @@
-local overrides = require("custom.plugins.overrides")
+local overrides = require "custom.plugins.overrides"
 
 return {
 
--- default plugins ---------------------------------
+  -- default plugins ---------------------------------
 
   ["folke/which-key.nvim"] = { disable = false },
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.plugins.conf.lspconfig")
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.conf.lspconfig"
     end,
   },
 
@@ -24,14 +24,18 @@ return {
   ["jose-elias-alvarez/null-ls.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
-      require("custom.plugins.conf.null-ls")
+      require "custom.plugins.conf.null-ls"
     end,
   },
+
+  -- this is used because null-ls prettier is not working for some reason
+  ["rhysd/vim-fixjson"] = {},
+
 
   -- navigation
   ["ThePrimeagen/harpoon"] = {
     config = function()
-      require("custom.plugins.conf.harpoon")
+      require "custom.plugins.conf.harpoon"
     end,
   },
 
@@ -39,36 +43,36 @@ return {
   ["simrat39/rust-tools.nvim"] = {
     after = "nvim-lspconfig",
     config = function()
-      require("custom.plugins.conf.rust-tools")
+      require "custom.plugins.conf.rust-tools"
     end,
   },
 
   -- debug
   ["mfussenegger/nvim-dap"] = {
-    config = function ()
-      require("custom.plugins.conf.dap")
-    end
+    config = function()
+      require "custom.plugins.conf.dap"
+    end,
   },
 
   ["nvim-telescope/telescope-dap.nvim"] = {
     after = "telescope.nvim",
     config = function()
-      require("telescope").load_extension("dap")
-    end
+      require("telescope").load_extension "dap"
+    end,
   },
 
   ["theHamsta/nvim-dap-virtual-text"] = {
     config = function()
       require("nvim-dap-virtual-text").setup()
-    end
+    end,
   },
 
   ["rcarriga/nvim-dap-ui"] = {
     requires = { "mfussenegger/nvim-dap" },
     after = "nvim-dap",
     config = function()
-      require("custom.plugins.conf.nvim-dap-ui")
-    end
+      require "custom.plugins.conf.nvim-dap-ui"
+    end,
   },
 
   ["jbyuki/one-small-step-for-vimkind"] = {},

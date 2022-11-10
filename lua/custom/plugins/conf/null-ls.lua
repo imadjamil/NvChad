@@ -10,9 +10,10 @@ local b = null_ls.builtins
 local sources = {
 
   -- JS html css stuff
-  b.formatting.prettierd.with {
-    filetypes = { "html", "json", "markdown", "css" },
-  },
+  b.formatting.prettier,
+  -- b.formatting.prettier.with {
+  --   filetypes = { "html", "json", "markdown", "css" },
+  -- },
   b.diagnostics.eslint.with {
     command = "eslint_d",
   },
@@ -23,7 +24,7 @@ local sources = {
   -- b.diagnostics.ansiblelint,
 
   -- Lua (redundant with sumneko_lua)
-  -- b.formatting.stylua,
+  b.formatting.stylua,
   -- b.diagnostics.luacheck.with { extra_args = { "--global vim" } },
 
   -- Shell

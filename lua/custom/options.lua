@@ -17,6 +17,8 @@ vim.opt.updatetime = 50
 -- increase this when more lines are needed to display messages 
 vim.opt.cmdheight = 1
 
+vim.g.fixjson_indent_size = 1
+
 -- -- some color changes
 -- vim.api.nvim_set_hl(0, "cursorlinenr", {bg = "None"})
 -- vim.api.nvim_set_hl(0, "linenr", {fg = "#5eacd3"})
