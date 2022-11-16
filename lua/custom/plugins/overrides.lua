@@ -42,6 +42,14 @@ M.treesitter = {
   indent = { enable = true },
 }
 
+M.sumneko_lua = {
+  lua = {
+    format = {
+      enable = true
+    }
+  }
+}
+
 M.nvimtree = {
   filters = {
     dotfiles = true,

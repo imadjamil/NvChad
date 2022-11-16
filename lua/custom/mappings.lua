@@ -196,6 +196,25 @@ M.dap = {
 
 }
 
+
+M.navigations = {
+  n = {
+    ["<leader>fp"] = {
+    function ()
+      local fp = require("telescope").extensions.projections.projections
+      fp({
+        action = function(selection)
+          -- chdir is required since there might not be a session file
+          vim.fn.chdir(selection.value)
+          -- Session.restore(selection.value)
+        end,
+      })
+    end,
+    "Find projects"
+    }
+  }
+}
+
 M.colors = {
   n = {
     ["<leader>,cs"] = {

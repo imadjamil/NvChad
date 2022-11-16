@@ -31,11 +31,18 @@ return {
   -- this is used because null-ls prettier is not working for some reason
   ["rhysd/vim-fixjson"] = {},
 
-
   -- navigation
   ["ThePrimeagen/harpoon"] = {
+    after = "telescope.nvim",
     config = function()
       require "custom.plugins.conf.harpoon"
+    end,
+  },
+
+  ["GniKDroy/projections.nvim"] = {
+    after = "telescope.nvim",
+    config = function()
+      require "custom.plugins.conf.projections"
     end,
   },
 

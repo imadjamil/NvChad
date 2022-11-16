@@ -1,5 +1,5 @@
 require("custom.options")
-vim.cmd(":Telescope find_files")
+-- vim.cmd(":Telescope find_files")
 
 
 -- LSP Diagnostics Options Setup 
