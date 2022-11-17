@@ -17,9 +17,14 @@ projections.setup ({
   workspaces = ws_list,
 })
 
-
 -- debugging
 --
 -- local workspace = require("projections.workspace")
--- -- workspace.add('~/perso/src/github.com/imadjamil')
+-- workspace.add('~/perso/src/github.com/imadjamil')
 -- print("from config:\n" .. vim.inspect(workspace.get_workspaces_from_config()))
+
+local session = require("projections.session")
+vim.api.nvim_create_autocmd({'DirChangedPre', 'VimLeavePre'}, {
+  callback = function () session.store(vim.loop.cwd()) end,
+  desc = "Store projection session"
+})

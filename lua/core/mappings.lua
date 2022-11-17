@@ -1,4 +1,4 @@
--- n, v, i, t = mode names
+ -- n, v, i, t = mode names
 
 local function termcodes(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)

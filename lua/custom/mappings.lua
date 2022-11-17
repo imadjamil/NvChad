@@ -202,15 +202,16 @@ M.navigations = {
     ["<leader>fp"] = {
     function ()
       local fp = require("telescope").extensions.projections.projections
+      local session = require("projections.session")
       fp({
         action = function(selection)
           -- chdir is required since there might not be a session file
           vim.fn.chdir(selection.value)
-          -- Session.restore(selection.value)
+          session.restore(selection.value)
         end,
       })
     end,
-    "Find projects"
+    "Find projection"
     }
   }
 }
