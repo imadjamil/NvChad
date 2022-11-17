@@ -41,6 +41,7 @@ return {
 
   ["GniKDroy/projections.nvim"] = {
     after = "telescope.nvim",
+    opt = false,
     config = function()
       require "custom.plugins.conf.projections"
     end,
