@@ -19,6 +19,10 @@ vim.opt.cmdheight = 1
 
 vim.g.fixjson_indent_size = 1
 
+-- command height
+vim.o.ls = 2
+vim.o.ch = 0 -- hide command line
+
 -- -- some color changes
 -- vim.api.nvim_set_hl(0, "cursorlinenr", {bg = "None"})
 -- vim.api.nvim_set_hl(0, "linenr", {fg = "#5eacd3"})

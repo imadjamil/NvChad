@@ -49,6 +49,10 @@ return {
 
   ["christoomey/vim-tmux-navigator"] = {},
 
+  ["tpope/vim-obsession"] = {}, -- used for tmux-resurrect
+
+  ["nvim-treesitter/nvim-treesitter-context"] = {},
+
   -- rust
   ["simrat39/rust-tools.nvim"] = {
     after = "nvim-lspconfig",
@@ -141,15 +145,4 @@ return {
 --       "numirias/semshi", -- python
 --    }
 --
---    -- navigation
---    use {
---       "ThePrimeagen/harpoon",
---       requires = {
---          "nvim-lua/plenary.nvim",
---          "nvim-lua/popup.nvim",
---       },
---       config = function()
---          require("custom.plugins.conf.harpoon").setup()
---       end,
---    }
 -- end)
