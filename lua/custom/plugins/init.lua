@@ -47,6 +47,8 @@ return {
     end,
   },
 
+  ["christoomey/vim-tmux-navigator"] = {},
+
   -- rust
   ["simrat39/rust-tools.nvim"] = {
     after = "nvim-lspconfig",
