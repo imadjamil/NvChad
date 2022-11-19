@@ -23,6 +23,8 @@ vim.g.fixjson_indent_size = 1
 vim.o.ls = 2
 vim.o.ch = 0 -- hide command line
 
+vim.o.relativenumber = true
+
 -- -- some color changes
 -- vim.api.nvim_set_hl(0, "cursorlinenr", {bg = "None"})
 -- vim.api.nvim_set_hl(0, "linenr", {fg = "#5eacd3"})
