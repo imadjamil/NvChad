@@ -53,6 +53,13 @@ return {
 
   ["nvim-treesitter/nvim-treesitter-context"] = {},
 
+  ["nvim-telescope/telescope-live-grep-args.nvim"] = {
+    after = "telescope.nvim",
+    config = function()
+      require("telescope").load_extension "live_grep_args"
+    end,
+  },
+
   -- rust
   ["simrat39/rust-tools.nvim"] = {
     after = "nvim-lspconfig",

@@ -212,6 +212,11 @@ M.navigations = {
       })
     end,
     "Find projection"
+    },
+    ["<leader>fg"] = {
+      function ()
+        require("telescope").extensions.live_grep_args.live_grep_args()
+      end
     }
   }
 }
