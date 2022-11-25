@@ -217,7 +217,8 @@ M.navigations = {
       function ()
         require("telescope").extensions.live_grep_args.live_grep_args()
       end
-    }
+    },
+    "Live grep with args"
   }
 }
 
