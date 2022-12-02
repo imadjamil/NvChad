@@ -17,6 +17,7 @@ return {
   ["lukas-reineke/indent-blankline.nvim"] = { override_options = overrides.blankline },
   ["nvim-treesitter/nvim-treesitter"] = { override_options = overrides.treesitter },
   ["kyazdani42/nvim-tree.lua"] = { override_options = overrides.nvimtree },
+  ["williamboman/mason.nvim"] = { override_options = overrides.mason },
 
   -- custom plugins ---------------------------------
 

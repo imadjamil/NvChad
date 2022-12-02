@@ -1,7 +1,6 @@
 local M = {}
 
-M.nvterm = {
-}
+M.nvterm = {}
 
 M.blankline = {
   filetype_exclude = {
@@ -37,12 +36,15 @@ M.treesitter = {
   auto_install = true,
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting=false,
+    additional_vim_regex_highlighting = false,
   },
   indent = { enable = true },
 }
 
-M.sumneko_lua = {
+M.sumneko_lua = {}
+
+M.mason = {
+  ensure_installed = { "stylua", "bash-language-server" },
 }
 
 M.nvimtree = {
