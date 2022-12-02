@@ -1,7 +1,7 @@
 local ok, null_ls = pcall(require, "null-ls")
 
 if not ok then
-  print("null-ls not found!")
+  print "null-ls not found!"
   return
 end
 
@@ -23,7 +23,7 @@ local sources = {
   -- b.formatting.yamlfmt,
   -- b.diagnostics.ansiblelint,
 
-  -- Lua (redundant with sumneko_lua)
+  -- Lua (redundant with sumneko_lua, but the latter is not working)
   b.formatting.stylua,
   -- b.diagnostics.luacheck.with { extra_args = { "--global vim" } },
 
@@ -48,5 +48,5 @@ local sources = {
 
 null_ls.setup {
   debug = true,
-  sources = sources
+  sources = sources,
 }

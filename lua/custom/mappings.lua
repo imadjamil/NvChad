@@ -196,7 +196,6 @@ M.dap = {
 
 }
 
-
 M.navigations = {
   n = {
     ["<leader>fp"] = {

@@ -43,11 +43,6 @@ M.treesitter = {
 }
 
 M.sumneko_lua = {
-  lua = {
-    format = {
-      enable = true
-    }
-  }
 }
 
 M.nvimtree = {
