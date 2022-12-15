@@ -169,13 +169,13 @@ M.dap = {
       function()
         require("osv").run_this()
       end,
-      'dap "lua" debug osv'
+      'dap lua debug osv'
     },
     ["<leader>dll"] = {
       function()
         require("osv").launch({port=8086})
       end,
-      'dap "lua" launch osv'
+      'dap lua launch osv'
     },
     ["<leader>dut"] = {
       function ()

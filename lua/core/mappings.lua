@@ -1,4 +1,4 @@
- -- n, v, i, t = mode names
+-- n, v, i, t = mode names
 
 local function termcodes(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -199,7 +199,7 @@ M.lspconfig = {
       "lsp references",
     },
 
-    ["<leader>f"] = {
+    ["<leader>fd"] = {
       function()
         vim.diagnostic.open_float()
       end,
@@ -452,12 +452,12 @@ M.gitsigns = {
       "Preview hunk",
     },
 
-    ["<leader>gb"] = {
-      function()
-        package.loaded.gitsigns.blame_line()
-      end,
-      "Blame line",
-    },
+    -- ["<leader>gb"] = {
+    --   function()
+    --     package.loaded.gitsigns.blame_line()
+    --   end,
+    --   "Blame line",
+    -- },
 
     ["<leader>td"] = {
       function()

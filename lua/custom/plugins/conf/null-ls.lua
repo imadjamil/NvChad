@@ -10,7 +10,7 @@ local b = null_ls.builtins
 local sources = {
 
   -- JS html css stuff
-  b.formatting.prettier,
+  -- b.formatting.prettier,
   -- b.formatting.prettier.with {
   --   filetypes = { "html", "json", "markdown", "css" },
   -- },
@@ -20,7 +20,7 @@ local sources = {
 
   -- yaml linter
   -- b.diagnostics.yamllint,
-  -- b.formatting.yamlfmt,
+  b.formatting.yamlfmt,
   -- b.diagnostics.ansiblelint,
 
   -- Lua (redundant with sumneko_lua, but the latter is not working)

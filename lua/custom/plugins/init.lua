@@ -4,7 +4,9 @@ return {
 
   -- default plugins ---------------------------------
 
-  ["folke/which-key.nvim"] = { disable = false },
+  ["folke/which-key.nvim"] = {
+    override_options = overrides.which_key,
+  },
 
   ["neovim/nvim-lspconfig"] = {
     config = function()
@@ -98,6 +100,20 @@ return {
   },
 
   ["jbyuki/one-small-step-for-vimkind"] = {},
+
+  ["jackMort/ChatGPT.nvim"] = {
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    after = "telescope.nvim",
+    config = function()
+      require("chatgpt").setup({
+        -- optional configuration
+      })
+    end,
+  },
 }
 
 -- local customPlugins = require("core.customPlugins")
