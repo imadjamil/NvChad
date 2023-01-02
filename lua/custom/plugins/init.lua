@@ -4,9 +4,9 @@ return {
 
   -- default plugins ---------------------------------
 
-  ["folke/which-key.nvim"] = {
-    override_options = overrides.which_key,
-  },
+  -- ["folke/which-key.nvim"] = {
+  --   override_options = overrides.which_key,
+  -- },
 
   ["neovim/nvim-lspconfig"] = {
     config = function()

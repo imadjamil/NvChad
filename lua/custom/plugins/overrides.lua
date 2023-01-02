@@ -68,7 +68,7 @@ M.nvimtree = {
 }
 
 M.which_key = {
-  disabled = false,
+  disable = false,
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "^:", "^ " },
 }
 
